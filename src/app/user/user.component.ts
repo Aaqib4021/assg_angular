@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { UserService } from '../user-service.service';
 import { CommonModule } from '@angular/common';
-// import { GithubUser } from './user.model'; // or define above
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 export interface GithubUser {
@@ -44,7 +43,7 @@ export interface GithubUser {
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './user.component.html'
 })
 export class UserComponent implements OnInit {
