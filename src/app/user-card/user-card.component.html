@@ -1,0 +1,45 @@
+<div
+  (mouseenter)="hover = true"
+  (mouseleave)="hover = false"
+  [style.boxShadow]="hover ? '0 12px 24px rgba(0,0,0,0.2)' : '0 6px 12px rgba(0,0,0,0.1)'"
+  [style.transform]="hover ? 'scale(1.02)' : 'scale(1)'"
+  style="max-width: 360px; margin: 30px auto; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; font-family: 'Segoe UI', sans-serif; background-color: #f9fafb; transition: all 0.3s ease;"
+>
+  <img
+    [src]="user.avatar_url"
+    alt="Avatar"
+    style="width: 100%; height: 260px; object-fit: cover; display: block; border-bottom: 1px solid #e5e7eb;"
+  />
+
+  <div style="padding: 20px;">
+    <h2 style="font-size: 22px; font-weight: 600; margin-bottom: 6px; color: #111827;">
+      {{ user.login }}
+    </h2>
+    <p style="margin: 4px 0; color: #6b7280; font-size: 14px;">ID: {{ user.id }}</p>
+    <p style="margin: 6px 0; color: #374151; font-size: 15px;"><strong>Type:</strong> {{ user.type }}</p>
+    <p style="margin: 6px 0; color: #374151; font-size: 15px;">
+      <strong>Site Admin:</strong> {{ user.site_admin ? 'Yes' : 'No' }}
+    </p>
+
+    <div style="margin-top: 20px; text-align: center;">
+      <a
+        [href]="user.html_url"
+        target="_blank"
+        style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background-color: #1f2937; border-radius: 8px; text-decoration: none; color: white; font-size: 15px; font-weight: 500; transition: background-color 0.3s ease;"
+        (mouseenter)="hover = true"
+        (mouseleave)="hover = false"
+      >
+        <svg
+          style="width: 22px; height: 22px; fill: white;"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 008 11c.6.1.8-.2.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.9-.7 2.5-1 .2-.7.6-1.1 1.1-1.3-2.7-.3-5.5-1.3-5.5-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.6-1.5.1-3.1 0 0 1-.3 3.3 1.3a11.4 11.4 0 016 0C18.3 4 19.3 4.3 19.3 4.3c.7 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.6-2.8 5.5-5.5 5.8.6.5 1.1 1.4 1.1 2.8v4.1c0 .4.2.8.8.6a11.5 11.5 0 008-11C23.5 5.7 18.3.5 12 .5z"
+          />
+        </svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</div>

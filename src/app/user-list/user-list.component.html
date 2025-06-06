@@ -1,0 +1,8 @@
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
+  <app-user-card 
+    *ngFor="let data of githubUsers" 
+    [user]="data" 
+    [routerLink]="['/user', data.id]"
+    style="cursor:pointer;">
+  </app-user-card>
+</div>
